@@ -135,4 +135,4 @@ release:
     - echo "Creating release $CI_COMMIT_TAG"
   release:
     tag_name: "$CI_COMMIT_TAG"
-    description: "pdns-auth $CI_COMMIT_TAG"
+    description: "pdns-auth-init-db $CI_COMMIT_TAG"
