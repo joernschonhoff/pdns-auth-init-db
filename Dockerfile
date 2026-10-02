@@ -1,4 +1,4 @@
-FROM alpine:3.23.4@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11 AS downloader
+FROM alpine:3.24.2@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6 AS downloader
 ARG PDNS_AUTH_VERSION
 
 WORKDIR /src
@@ -13,7 +13,7 @@ WORKDIR /src/pdns-${PDNS_AUTH_VERSION}
 RUN mkdir /runtime \
     && find . -type f -name "schema.*.sql" -exec cp {} /runtime/ \;
 
-FROM alpine:3.23.4@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11 AS runtime
+FROM alpine:3.24.2@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6 AS runtime
 
 RUN apk update \
     && apk add --no-cache \
